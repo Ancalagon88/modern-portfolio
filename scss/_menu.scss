@@ -12,6 +12,7 @@
         margin: 0 0 5px 0;
         background: set-text-color($primary-color);
         @include easeOut;
+        animation: beat 3s ease-in-out 4s 15;
     } // Rotate Into X With Menu Lines
     &.close {
         transform: rotate(180deg);
@@ -26,7 +27,18 @@
             &:nth-child(3) {
                 transform: rotate(-45deg) translate(7px, -6px);
             }
+            animation: none;
         }
+    }
+}
+
+@keyframes beat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+        background: $secondary-color;
     }
 }
 
